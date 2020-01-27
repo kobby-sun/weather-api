@@ -1,0 +1,29 @@
+{
+  "name": "weather-api",
+  "version": "0.0.1",
+  "description": "Hapi weather api",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "hapi": "^17.1.1",
+    "lodash": "4.17.4",
+    "moment": "2.19.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "nodemon": "^1.12.1",
+    "prettier": "^1.8.2"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node -- main.js"
+  },
+  "author": "Kobby Sun",
+  "email": "kobbysun@gmail.com"
+}
