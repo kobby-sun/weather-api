@@ -3,9 +3,7 @@
 Simple nodejs api to get weather via weatherstack and openweathermap (alternative)
 
 Steps to run the app
-
 yarn
-
 yarn start
 
 goto
