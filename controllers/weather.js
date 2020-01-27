@@ -59,18 +59,22 @@ export const index = async request => {
     } else {
       console.log('query')
       //query api
-      lastWeather[q] = null
       w = await getWeatherStack(q)
       console.log('query 1', w)
       if (w == null) {
         console.log('query 2', w)
         w = await getOpenWeatherMap(q)
       }
+      //cached new data
       if (w)
         lastWeather[q] = {
           data: w,
           cached: moment(),
         }
+      //no data from providers, use cache data
+      if (!w && lastWeather[q]) {
+        w = {...lastWeather[q].data, cached: lastWeather[q].cached.format('YYYY-MM-DD hh:mm:ss')}
+      }
     }
 
     return successAction(w || {message: 'Unable to get weather'})
